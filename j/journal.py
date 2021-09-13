@@ -7,10 +7,12 @@ import os
 load_dotenv()
 my_password = os.getenv('TOKEN')
 
+
 def show_options():
     print('1) -----Enter new log entry-----')
     print('2) -----Read previous logs-----')
     print('3) -----Exit-----')
+
 
 def starting_message():
     print('**************************')
@@ -33,19 +35,23 @@ def change_password(password, new_password):
     else:
         return False
 
+
 def create_new_entry(title, content, date):
     text_file = open("something.txt", "a")
-    text_file.write('------------------------------------\n')
-    text_file.write(f'{title}\n')
-    text_file.write(f' date: {date}')
-    text_file.write(f'{content}\n')
-    text_file.write('------------------------------------\n')
+    text_file.write
+    ('------------------------------------\n' +
+     f'{title}\n' +
+     f' date: {date}\n' +
+     f'{content}\n' +
+     '------------------------------------\n')
     text_file.close()
+
 
 def read_the_diary():
     text_file = open("something.txt", "r")
     data = text_file.read().splitlines()
     print(data)
+
 
 def save_entry_num():
     text_file = open("saves.txt", "r")
@@ -55,6 +61,7 @@ def save_entry_num():
     res = current_num + 1
     text_file.write(str(res))
     text_file.close()
+
 
 def show_num_of_entrys():
     text_file = open("saves.txt", "r")
@@ -86,7 +93,3 @@ while(running == True):
         show_options()
     if choice == 'exit':
         running = False
-
-    
-
-
